@@ -1,1 +1,1 @@
-web: gunicorn Wearesocial2.wsgi:application
+web: gunicorn we_are_social.wsgi:application
