@@ -46,8 +46,8 @@ urlpatterns = [
     url(r'^products/$', product_views.all_products),
     url(r'^magazines/$', magazine_views.all_magazines),
 
-    # Blog URLs
-    url(r'^blog/', include('reusable_blog.urls')),
+    # # Blog URLs
+    # url(r'^blog/', include('reusable_blog.urls')),
 
     # Forum URLs
     url(r'^forum/$', forum_views.forum),
