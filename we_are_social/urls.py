@@ -22,11 +22,13 @@ from products import views as product_views
 from magazines import views as magazine_views
 from accounts.views import register, profile, login, logout, cancel_subscription, subscriptions_webhook
 from threads import views as forum_views
-from django.contrib.staticfiles import views
+from django.contrib.staticfiles import views as specialviews
+from we_are_social import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.get_index),
+    url(r'^static/(?P<path>.*)$', specialviews.serve),
 
     # Auth URLs
     url(r'^pages/', include('django.contrib.flatpages.urls')),
@@ -60,5 +62,6 @@ urlpatterns = [
         forum_views.delete_post, name='delete_post'),
     url(r'^thread/vote(?P<thread_id>\d+)/(?P<subject_id>\d+)/$',
         forum_views.thread_vote, name='cast_vote'),
-    url(r'^static/(?P<path>.*)$', views.serve),
+    # url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+
 ]
