@@ -147,6 +147,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
+    'static/',
 )
 
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", "js",
