@@ -1,23 +1,113 @@
 {% extends "base.html" %}
 {% block content %}
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Purchase</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for product in products %}
-                <tr>
-                    <td>{{ product.name }}</td>
-                    <td>{{ product.description }}</td>
-                    <td>${{ product.price }}</td>
-                    <td>{{ product.paypal_form.sandbox }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+{#    <table class="table table-striped">#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>Name</th>#}
+{#                <th>Description</th>#}
+{#                <th>Price</th>#}
+{#                <th>Purchase</th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#            {% for product in products %}#}
+    {#                <tr>#}
+    {#                    <td>{{ product.name }}</td>#}
+    {#                    <td>{{ product.description }}</td>#}
+    {#                    <td>${{ product.price }}</td>#}
+    {#                    <td>{{ product.paypal_form.sandbox }}</td>#}
+    {#                </tr>#}
+    {#            {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+
+
+
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    </head>
+    <body>
+
+    <div class="top-bar">
+        <div class="top-bar-left">
+
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                <li><a href="#">Three</a></li>
+                <li><a href="#">Four</a></li>
+                <li><a href="#">Five</a></li>
+                <li><a href="#">Six</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+        <ul class="orbit-container">
+            <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;
+            </button>
+            <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+            <li class="orbit-slide is-active">
+                <img src="http://placehold.it/2000x750">
+            </li>
+            <li class="orbit-slide">
+                <img src="http://placehold.it/2000x750">
+            </li>
+            <li class="orbit-slide">
+                <img src="http://placehold.it/2000x750">
+            </li>
+            <li class="orbit-slide">
+                <img src="http://placehold.it/2000x750">
+            </li>
+        </ul>
+    </div>
+    <div class="row column text-center">
+        <h2>Our Newest Products</h2>
+        <hr>
+    </div>
+    <div class="row small-up-2 large-up-4">
+        {% for product in products %}
+            <div class="column">
+                <img class="thumbnail" src="http://placehold.it/300x400">
+                <h5>{{ product.name }}</h5>
+                <p>{{ product.price }}</p>
+                <a href="#" class="button expanded">Buy</a>
+            </div>
+        {% endfor %}
+
+
+
+        <div class="column">
+            <img class="thumbnail" src="http://placehold.it/300x400">
+            <h5>Nulla At Nulla Justo, Eget</h5>
+            <p>$400</p>
+            <a href="#" class="button expanded">Buy</a>
+        </div>
+        <div class="column">
+            <img class="thumbnail" src="http://placehold.it/300x400">
+            <h5>Nulla At Nulla Justo, Eget</h5>
+            <p>$400</p>
+            <a href="#" class="button expanded">Buy</a>
+        </div>
+        <div class="column">
+            <img class="thumbnail" src="http://placehold.it/300x400">
+            <h5>Nulla At Nulla Justo, Eget</h5>
+            <p>$400</p>
+            <a href="#" class="button expanded">Buy</a>
+        </div>
+    </div>
+    <hr>
+    <div class="row column">
+        <div class="callout primary">
+            <h3>Really big special this week on items.</h3>
+        </div>
+    </div>
+    <hr>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+    </body>
+
 {% endblock %}

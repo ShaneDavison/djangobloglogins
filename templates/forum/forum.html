@@ -13,14 +13,17 @@
                     {% endautoescape %}
                 </a>
             </p>
+
+       <br>
         <table>
             <tr>
-                <th>THREADS</th>
-                <th>POSTS</th>
+                <th><a href="{% url 'threads' subject.id %}"> Popular threads</th>
+                <th>Recent Posts</th>
             </tr>
+            <br>
             <tr>
                 <td>{{ subject.threads.count }}</td>
-                <td>{{ subject|get_total_subject_posts }}</td>
+                <td>{{ subject.threads_post.count }}</td>
             </tr>
         </table>
         </section>

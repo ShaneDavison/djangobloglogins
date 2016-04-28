@@ -31,6 +31,9 @@ SITE_ID = 2
 # Application definition
 
 INSTALLED_APPS = [
+    'material.admin',
+    'material',
+    'material.frontend',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,6 +57,8 @@ INSTALLED_APPS = [
     'polls',
     'rest_framework',
     'gunicorn',
+    'photologue',
+    'sortedm2m',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
